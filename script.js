@@ -91,5 +91,23 @@ if (guestName) {
 
     }
 
-}});
+}
 
+
+const rsvpGuestName = document.querySelector("#rsvpGuestName");
+
+if (rsvpGuestName) {
+
+    const savedGuest = localStorage.getItem("currentGuest");
+
+    if (savedGuest) {
+
+        const guest = JSON.parse(savedGuest);
+
+        rsvpGuestName.textContent = guest.names[0];
+
+    }
+
+}
+
+});
