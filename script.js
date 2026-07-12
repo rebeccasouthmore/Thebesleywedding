@@ -93,9 +93,9 @@ guestName.textContent = guest.guests[0].name;
 }
 
 
-const rsvpGuestName = document.querySelector("#rsvpGuestName");
+const guestList = document.querySelector("#guestList");
 
-if (rsvpGuestName) {
+if (guestList) {
 
     const savedGuest = localStorage.getItem("currentGuest");
 
@@ -103,7 +103,51 @@ if (rsvpGuestName) {
 
         const guest = JSON.parse(savedGuest);
 
-rsvpGuestName.textContent = guest.guests[0].name;
+        guest.guests.forEach(person => {
+
+            const guestCard = document.createElement("div");
+
+            guestCard.className = "guest-card";
+
+            guestCard.innerHTML = `
+
+                <h2>${person.name}</h2>
+
+                <label>
+                    <input type="radio" name="${person.name}-attendance">
+                    Delighted to attend
+                </label>
+
+                <label>
+                    <input type="radio" name="${person.name}-attendance">
+                    Unable to attend
+                </label>
+
+                <br><br>
+
+                <label>
+                    Meal choice:
+                </label>
+
+                <select>
+                    <option>Meat</option>
+                    <option>Vegan</option>
+                </select>
+
+                <br><br>
+
+                <label>
+                    Dietary requirements:
+                </label>
+
+                <textarea></textarea>
+
+            `;
+
+            guestList.appendChild(guestCard);
+
+        });
+
     }
 
 }
