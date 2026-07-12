@@ -1,0 +1,185 @@
+```css
+/* 
+Project Besley
+Rebecca and Matthew
+The Besley Wedding
+*/
+
+/* Base */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f6f0e5;
+    color: #4a4036;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* Main invitation container */
+
+.invitation {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+
+/* Antique gold frame */
+
+.gold-border {
+    width: 100%;
+    max-width: 850px;
+    padding: 14px;
+    border: 1px solid #b08d57;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* Inner paper */
+
+.hero {
+    text-align: center;
+    padding: 70px 45px;
+    border: 1px solid rgba(176, 141, 87, 0.5);
+    background: #faf5eb;
+}
+
+
+/* Small elegant introduction */
+
+.small-script {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    color: #8a7654;
+}
+
+
+/* Names */
+
+h1 {
+    margin: 0;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: normal;
+    line-height: 0.95;
+    color: #40362d;
+}
+
+h1 span {
+    font-size: 0.55em;
+    color: #b08d57;
+}
+
+
+/* Wedding title */
+
+h2 {
+    margin-top: 35px;
+    font-size: 1.4rem;
+    font-weight: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8a7654;
+}
+
+
+/* Venue artwork placeholder */
+
+.venue-placeholder {
+    margin: 45px auto;
+    height: 180px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #b08d57;
+    border-bottom: 1px solid #b08d57;
+    color: #8a7654;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+/* Welcome text */
+
+.welcome {
+    max-width: 600px;
+    margin: 25px auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+
+/* Date */
+
+.date {
+    margin-top: 45px;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    color: #8a7654;
+}
+
+
+/* Invitation code section */
+
+.invitation-entry {
+    margin-top: 55px;
+}
+
+.invitation-entry label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+
+input {
+    width: 180px;
+    padding: 14px;
+    text-align: center;
+    border: 1px solid #b08d57;
+    background: transparent;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+
+button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 14px 45px;
+    border: 1px solid #b08d57;
+    background: #b08d57;
+    color: #faf5eb;
+    font-family: inherit;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+
+/* Mobile adjustments */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 45px 20px;
+    }
+
+    h2 {
+        letter-spacing: 2px;
+    }
+
+    .welcome {
+        font-size: 1rem;
+    }
+
+}
+```
