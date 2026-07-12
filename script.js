@@ -77,6 +77,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+const guestName = document.querySelector("#guestName");
 
-});
+if (guestName) {
+
+    const savedGuest = localStorage.getItem("currentGuest");
+
+    if (savedGuest) {
+
+        const guest = JSON.parse(savedGuest);
+
+        guestName.textContent = guest.names[0];
+
+    }
+
+}});
 
