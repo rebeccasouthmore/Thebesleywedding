@@ -87,8 +87,7 @@ if (guestName) {
 
         const guest = JSON.parse(savedGuest);
 
-        guestName.textContent = guest.names[0];
-
+guestName.textContent = guest.guests[0].name;
     }
 
 }
@@ -104,8 +103,7 @@ if (rsvpGuestName) {
 
         const guest = JSON.parse(savedGuest);
 
-        rsvpGuestName.textContent = guest.names[0];
-
+rsvpGuestName.textContent = guest.guests[0].name;
     }
 
 }
