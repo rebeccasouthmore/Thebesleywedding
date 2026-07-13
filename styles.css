@@ -218,7 +218,73 @@ h2 {
     letter-spacing: 0.13em;
 }
 
+/* ---------- Homepage monogram and names ---------- */
 
+.monogram {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: var(--antique-gold);
+    font-size: 2rem;
+    font-style: italic;
+    letter-spacing: -0.08em;
+    border: 1px solid var(--antique-gold);
+    border-radius: 50%;
+}
+
+.monogram::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(167, 134, 79, 0.45);
+    border-radius: 50%;
+}
+
+.monogram span {
+    position: relative;
+    z-index: 1;
+}
+
+.monogram-ampersand {
+    margin: 0 2px;
+    font-size: 0.65em;
+}
+
+.invitation-intro {
+    margin: 0 0 22px;
+    color: var(--soft-charcoal);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.couple-names {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: clamp(3.2rem, 9vw, 6rem);
+    line-height: 0.95;
+}
+
+.couple-names span {
+    display: block;
+    margin: 12px 0;
+    color: var(--antique-gold);
+    font-size: 0.42em;
+    font-style: italic;
+}
+
+.marriage-line {
+    margin: 27px 0 0;
+    color: var(--antique-gold);
+    font-size: 0.76rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+}
 /* ---------- Venue area ---------- */
 
 .venue-placeholder {
