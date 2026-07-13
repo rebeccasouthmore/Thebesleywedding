@@ -1,225 +1,526 @@
-
-/* 
+/*
 Project Besley
 Rebecca and Matthew
 The Besley Wedding
 */
 
-/* Base */
+
+/* ---------- Colour and spacing system ---------- */
+
+:root {
+    --ivory: #f4ecde;
+    --paper: #fbf5e9;
+    --paper-deep: #eee2cf;
+    --charcoal: #403a34;
+    --soft-charcoal: #62594f;
+    --antique-gold: #a7864f;
+    --light-gold: #c9ae7a;
+    --sage: #7f8a70;
+    --blush: #cda99e;
+    --lavender: #a69aae;
+    --fine-line: rgba(167, 134, 79, 0.45);
+    --shadow: rgba(78, 59, 39, 0.13);
+}
+
 
 * {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: #f6f0e5;
-    color: #4a4036;
-    font-family: Georgia, "Times New Roman", serif;
+
+html {
+    scroll-behavior: smooth;
 }
 
 
-/* Main invitation container */
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--charcoal);
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(
+            circle at 12% 8%,
+            rgba(205, 169, 158, 0.12),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 88% 88%,
+            rgba(127, 138, 112, 0.12),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            var(--ivory),
+            #f8f1e6 55%,
+            var(--paper-deep)
+        );
+}
+
+
+/* ---------- Main invitation sheet ---------- */
 
 .invitation {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 42px 22px;
 }
 
-
-/* Antique gold frame */
 
 .gold-border {
+    position: relative;
     width: 100%;
     max-width: 850px;
-    padding: 14px;
-    border: 1px solid #b08d57;
-    background: rgba(255, 255, 255, 0.25);
+    padding: 11px;
+    border: 1px solid var(--antique-gold);
+    background: rgba(251, 245, 233, 0.5);
+    box-shadow: 0 22px 65px var(--shadow);
 }
 
 
-/* Inner paper */
+.gold-border::before,
+.gold-border::after {
+    content: "❦";
+    position: absolute;
+    z-index: 2;
+    color: var(--antique-gold);
+    font-size: 1.45rem;
+    line-height: 1;
+    background: var(--paper);
+    padding: 0 8px;
+}
+
+
+.gold-border::before {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.gold-border::after {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+}
+
 
 .hero {
+    position: relative;
+    overflow: hidden;
     text-align: center;
-    padding: 70px 45px;
-    border: 1px solid rgba(176, 141, 87, 0.5);
-    background: #faf5eb;
+    padding: 78px 58px;
+    border: 1px solid var(--fine-line);
+    background:
+        linear-gradient(
+            rgba(251, 245, 233, 0.94),
+            rgba(251, 245, 233, 0.94)
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(90, 70, 50, 0.025) 4px
+        );
 }
 
 
-/* Small elegant introduction */
+/* Fine corner decoration until the floral artwork is added */
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+
+.hero::before {
+    top: -35px;
+    left: -35px;
+    border-top: 1px solid var(--light-gold);
+    border-left: 1px solid var(--light-gold);
+    border-radius: 70% 0 70% 0;
+}
+
+
+.hero::after {
+    right: -35px;
+    bottom: -35px;
+    border-right: 1px solid var(--light-gold);
+    border-bottom: 1px solid var(--light-gold);
+    border-radius: 70% 0 70% 0;
+}
+
+
+/* ---------- Typography ---------- */
 
 .small-script {
-    font-size: 1rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 35px;
-    color: #8a7654;
+    margin: 0 0 30px;
+    color: var(--antique-gold);
+    font-size: 0.82rem;
+    font-style: italic;
+    letter-spacing: 0.18em;
 }
 
-
-/* Names */
 
 h1 {
     margin: 0;
-    font-size: clamp(3rem, 8vw, 5.5rem);
+    color: var(--charcoal);
+    font-size: clamp(3rem, 8vw, 5.6rem);
     font-weight: normal;
-    line-height: 0.95;
-    color: #40362d;
+    line-height: 0.98;
+    letter-spacing: 0.025em;
 }
+
 
 h1 span {
-    font-size: 0.55em;
-    color: #b08d57;
-}
-
-
-/* Wedding title */
-
-h2 {
-    margin-top: 35px;
-    font-size: 1.4rem;
-    font-weight: normal;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #8a7654;
-}
-
-
-/* Venue artwork placeholder */
-
-.venue-placeholder {
-    margin: 45px auto;
-    height: 180px;
-    max-width: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid #b08d57;
-    border-bottom: 1px solid #b08d57;
-    color: #8a7654;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-
-/* Welcome text */
-
-.welcome {
-    max-width: 600px;
-    margin: 25px auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-
-/* Date */
-
-.date {
-    margin-top: 45px;
-    font-size: 1.3rem;
-    letter-spacing: 3px;
-    color: #8a7654;
-}
-
-
-/* Invitation code section */
-
-.invitation-entry {
-    margin-top: 55px;
-}
-
-.invitation-entry label {
-    display: block;
-    margin-bottom: 15px;
-    font-size: 0.95rem;
-}
-
-
-input {
-    width: 180px;
-    padding: 14px;
-    text-align: center;
-    border: 1px solid #b08d57;
-    background: transparent;
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-
-button {
-    display: block;
-    margin: 20px auto 0;
-    padding: 14px 45px;
-    border: 1px solid #b08d57;
-    background: #b08d57;
-    color: #faf5eb;
-    font-family: inherit;
-    letter-spacing: 2px;
-    cursor: pointer;
-}
-
-
-/* Mobile adjustments */
-
-@media (max-width: 600px) {
-
-    .hero {
-        padding: 45px 20px;
-    }
-
-    h2 {
-        letter-spacing: 2px;
-    }
-
-    .welcome {
-        font-size: 1rem;
-    }
-
-}
-
-/* 
-Luxury paper finishing touches
-Project Besley
-*/
-
-body {
-    background:
-        radial-gradient(circle at top left, rgba(176, 141, 87, 0.08), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(138, 118, 84, 0.08), transparent 35%),
-        #f6f0e5;
-}
-
-
-.hero {
-    box-shadow:
-        0 20px 60px rgba(80, 60, 40, 0.08);
-}
-
-
-h1 {
-    letter-spacing: 2px;
-}
-
-
-.welcome {
+    color: var(--antique-gold);
+    font-size: 0.5em;
     font-style: italic;
 }
 
 
+h2 {
+    margin: 32px 0 18px;
+    color: var(--antique-gold);
+    font-size: 1.12rem;
+    font-weight: normal;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+.guest-name {
+    font-size: clamp(2.35rem, 7vw, 4.7rem);
+    line-height: 1.08;
+}
+
+
+.welcome {
+    max-width: 620px;
+    margin: 24px auto;
+    color: var(--soft-charcoal);
+    font-size: 1.08rem;
+    line-height: 1.85;
+}
+
+
+.date {
+    margin: 42px 0 0;
+    color: var(--antique-gold);
+    font-size: 1.2rem;
+    letter-spacing: 0.13em;
+}
+
+
+/* ---------- Venue area ---------- */
+
+.venue-placeholder {
+    width: min(100%, 570px);
+    min-height: 190px;
+    margin: 46px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--antique-gold);
+    font-size: 0.8rem;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    border-top: 1px solid var(--fine-line);
+    border-bottom: 1px solid var(--fine-line);
+}
+
+
+/* ---------- Invitation-code area ---------- */
+
+.invitation-entry {
+    margin-top: 48px;
+}
+
+
+.invitation-entry label {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--soft-charcoal);
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+}
+
+
+#code {
+    width: 190px;
+    padding: 13px 16px;
+    color: var(--charcoal);
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 0.12em;
+    border: 1px solid var(--antique-gold);
+    border-radius: 0;
+    outline: none;
+    background: rgba(251, 245, 233, 0.5);
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+}
+
+
+#code:focus {
+    background: var(--paper);
+    border-color: var(--light-gold);
+    box-shadow: 0 0 0 3px rgba(167, 134, 79, 0.1);
+}
+
+
+/* ---------- Links and buttons ---------- */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
 button {
-    transition: all 0.4s ease;
+    display: block;
+    margin: 22px auto 0;
+    padding: 14px 44px;
+    color: var(--paper);
+    font-family: inherit;
+    font-size: 0.83rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid var(--antique-gold);
+    border-radius: 0;
+    background: var(--antique-gold);
+    transition:
+        color 0.35s ease,
+        background 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
 
-button:hover {
+button:hover,
+button:focus-visible {
+    color: var(--antique-gold);
     background: transparent;
-    color: #8a7654;
+    box-shadow: 0 8px 22px rgba(78, 59, 39, 0.1);
+    transform: translateY(-1px);
 }
 
 
+button:focus-visible {
+    outline: 2px solid var(--light-gold);
+    outline-offset: 4px;
+}
+
+
+/* ---------- RSVP form ---------- */
+
+.rsvp-form {
+    width: min(100%, 650px);
+    margin: 46px auto 0;
+}
+
+
+.guest-response,
+#guestList {
+    width: 100%;
+}
+
+
+.guest-card {
+    position: relative;
+    margin: 0 0 30px;
+    padding: 38px 34px;
+    text-align: left;
+    border: 1px solid var(--fine-line);
+    background: rgba(251, 245, 233, 0.58);
+}
+
+
+.guest-card::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    bottom: 9px;
+    left: 9px;
+    pointer-events: none;
+    border: 1px solid rgba(167, 134, 79, 0.18);
+}
+
+
+.guest-card h2 {
+    position: relative;
+    margin: 0 0 26px;
+    padding-bottom: 18px;
+    text-align: center;
+    font-size: 1.3rem;
+    letter-spacing: 0.12em;
+}
+
+
+.guest-card h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 54px;
+    height: 1px;
+    background: var(--antique-gold);
+    transform: translateX(-50%);
+}
+
+
+.guest-card label {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: 13px 0;
+    color: var(--soft-charcoal);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+.guest-card input[type="radio"] {
+    width: auto;
+    margin: 0 10px 0 0;
+    accent-color: var(--antique-gold);
+}
+
+
+.guest-card select,
+.guest-card textarea {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin-top: 8px;
+    color: var(--charcoal);
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid var(--fine-line);
+    border-radius: 0;
+    outline: none;
+    background: rgba(251, 245, 233, 0.75);
+}
+
+
+.guest-card select {
+    min-height: 46px;
+    padding: 10px 13px;
+}
+
+
+.guest-card textarea {
+    min-height: 110px;
+    padding: 13px;
+    resize: vertical;
+}
+
+
+.guest-card select:focus,
+.guest-card textarea:focus {
+    border-color: var(--antique-gold);
+    box-shadow: 0 0 0 3px rgba(167, 134, 79, 0.1);
+}
+
+
+/* ---------- Gentle motion ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .gold-border {
+        animation: invitation-reveal 1.2s ease both;
+    }
+
+}
+
+
+@keyframes invitation-reveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ---------- Tablet and mobile ---------- */
+
+@media (max-width: 700px) {
+
+    .invitation {
+        padding: 18px 10px;
+        align-items: flex-start;
+    }
+
+    .gold-border {
+        padding: 7px;
+    }
+
+    .hero {
+        padding: 58px 24px;
+    }
+
+    .small-script {
+        margin-bottom: 24px;
+        font-size: 0.75rem;
+    }
+
+    h2 {
+        letter-spacing: 0.11em;
+    }
+
+    .welcome {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .venue-placeholder {
+        min-height: 145px;
+        margin: 36px auto;
+    }
+
+    .guest-card {
+        padding: 32px 22px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 270px;
+    }
+
+}
+
+
+@media (max-width: 390px) {
+
+    .hero {
+        padding: 48px 17px;
+    }
+
+    .guest-card {
+        padding: 28px 17px;
+    }
+
+    #code {
+        width: 170px;
+    }
+
+}
