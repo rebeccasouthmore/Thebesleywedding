@@ -234,7 +234,7 @@ height: 130px;
     font-style: italic;
     letter-spacing: -0.08em;
     border: 1px solid var(--antique-gold);
-    border-radius: 50%;
+    border-radius: 50% / 42%;
 }
 
 .monogram::before {
@@ -242,7 +242,7 @@ height: 130px;
     position: absolute;
     inset: 5px;
     border: 1px solid rgba(167, 134, 79, 0.45);
-    border-radius: 50%;
+    border-radius: 50% / 42%;
 }
 
 .monogram span {
