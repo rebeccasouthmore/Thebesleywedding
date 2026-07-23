@@ -221,20 +221,9 @@ h2 {
 /* ---------- Homepage monogram and names ---------- */
 
 .monogram {
-    position: relative;
-   width: 120px;
-height: 150px;
-    margin: 0 auto 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-    color: var(--antique-gold);
-    font-size: 2rem;
-    font-style: italic;
-    letter-spacing: -0.08em;
-    border: 2px solid var(--antique-gold);
-    border-radius: 50% / 42%;
+    display: block;
+    width: 170px;
+    margin: 0 auto 35px;
 }
 
 .monogram::before {
