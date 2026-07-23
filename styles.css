@@ -233,7 +233,7 @@ height: 150px;
     font-size: 2rem;
     font-style: italic;
     letter-spacing: -0.08em;
-    border: 1px solid var(--antique-gold);
+    border: 2px solid var(--antique-gold);
     border-radius: 50% / 42%;
 }
 
