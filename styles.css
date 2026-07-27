@@ -161,11 +161,16 @@ body {
 /* ---------- Typography ---------- */
 
 .small-script {
-    margin: 0 0 30px;
-    color: var(--antique-gold);
-    font-size: 0.82rem;
+    margin: 0 0 28px;
+    color: var(--soft-charcoal);
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.05rem;
     font-style: italic;
-    letter-spacing: 0.18em;
+    font-weight: 400;
+
+    letter-spacing: 0.04em;
+    line-height: 1.45;
 }
 
 
@@ -187,18 +192,21 @@ h1 span {
 
 
 h2 {
-    margin: 32px 0 18px;
+    margin: 42px 0 22px;
     color: var(--antique-gold);
-    font-size: 1.12rem;
-    font-weight: normal;
-    letter-spacing: 0.16em;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+
+    letter-spacing: 0.28em;
     text-transform: uppercase;
 }
 .wedding-title {
-    margin: 22px 0 38px;
+    margin: 18px 0 48px;
     color: var(--antique-gold);
-    font-size: 0.95rem;
-    letter-spacing: 0.35em;
+    font-size: 1rem;
+    letter-spacing: 0.42em;
     text-transform: uppercase;
 }
 
@@ -545,9 +553,13 @@ button:focus-visible {
     }
 
     .small-script {
-        margin-bottom: 24px;
-        font-size: 0.75rem;
-    }
+    margin: 0 0 28px;
+    color: var(--soft-charcoal);
+    font-size: 0.82rem;
+    font-style: italic;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+}
 
     h2 {
         letter-spacing: 0.11em;
