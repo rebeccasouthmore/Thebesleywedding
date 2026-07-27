@@ -218,10 +218,18 @@ h2 {
 
 
 .date {
-    margin: 42px 0 0;
+    width: 260px;
+    margin: 50px auto 40px;
+    padding: 18px 0;
+    text-align: center;
+
+    border-top: 1px solid var(--antique-gold);
+    border-bottom: 1px solid var(--antique-gold);
+
     color: var(--antique-gold);
     font-size: 1.2rem;
     letter-spacing: 0.13em;
+    text-transform: uppercase;
 }
 
 /* ---------- Homepage monogram and names ---------- */
@@ -296,6 +304,9 @@ h2 {
 
 .invitation-entry {
     margin-top: 48px;
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid var(--antique-gold);
 }
 
 
