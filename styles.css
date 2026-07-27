@@ -194,7 +194,13 @@ h2 {
     letter-spacing: 0.16em;
     text-transform: uppercase;
 }
-
+.wedding-title {
+    margin: 22px 0 38px;
+    color: var(--antique-gold);
+    font-size: 0.95rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+}
 
 .guest-name {
     font-size: clamp(2.35rem, 7vw, 4.7rem);
