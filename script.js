@@ -78,10 +78,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 const guestName = document.querySelector("#guestName");
+const savedGuest = localStorage.getItem("currentGuest");
+
+if (!savedGuest && (guestName || guestList)) {
+    window.location.href = "index.html";
+}
 
 if (guestName) {
 
-    const savedGuest = localStorage.getItem("currentGuest");
+    
 
     if (savedGuest) {
 
@@ -96,10 +101,15 @@ guestName.textContent = guest.guests
 
 
 const guestList = document.querySelector("#guestList");
+const savedGuest = localStorage.getItem("currentGuest");
+
+if (!savedGuest && (guestName || guestList)) {
+    window.location.href = "index.html";
+}
 
 if (guestList) {
 
-    const savedGuest = localStorage.getItem("currentGuest");
+   
 
     if (savedGuest) {
 
