@@ -411,101 +411,113 @@ button:focus-visible {
 }
 
 
+/* ---------- RSVP guest cards ---------- */
+
 .guest-card {
     position: relative;
-    margin: 0 0 30px;
-    padding: 38px 34px;
+    margin: 0 0 40px;
+    padding: 42px;
     text-align: left;
+
     border: 1px solid var(--fine-line);
-    background: rgba(251, 245, 233, 0.58);
+    background: rgba(251,245,233,0.45);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
 }
 
+.guest-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(78,59,39,.08);
+}
 
 .guest-card::before {
     content: "";
     position: absolute;
-    top: 9px;
-    right: 9px;
-    bottom: 9px;
-    left: 9px;
+    inset: 10px;
+    border: 1px solid rgba(167,134,79,.18);
     pointer-events: none;
-    border: 1px solid rgba(167, 134, 79, 0.18);
 }
-
 
 .guest-card h2 {
-    position: relative;
-    margin: 0 0 26px;
+    margin: 0 0 30px;
     padding-bottom: 18px;
-    text-align: center;
-    font-size: 1.3rem;
-    letter-spacing: 0.12em;
-}
 
+    text-align: center;
+
+    color: var(--antique-gold);
+
+    font-size: 1.35rem;
+    font-weight: normal;
+    letter-spacing: .18em;
+}
 
 .guest-card h2::after {
     content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 54px;
-    height: 1px;
-    background: var(--antique-gold);
-    transform: translateX(-50%);
-}
+    display: block;
 
+    width: 60px;
+    height: 1px;
+
+    margin: 18px auto 0;
+
+    background: var(--antique-gold);
+}
 
 .guest-card label {
-    position: relative;
-    z-index: 1;
     display: block;
-    margin: 13px 0;
+    margin: 18px 0;
+
     color: var(--soft-charcoal);
-    font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.7;
 }
 
-
 .guest-card input[type="radio"] {
-    width: auto;
-    margin: 0 10px 0 0;
+    margin-right: 10px;
     accent-color: var(--antique-gold);
 }
 
-
 .guest-card select,
 .guest-card textarea {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    margin-top: 8px;
-    color: var(--charcoal);
-    font-family: inherit;
-    font-size: 1rem;
-    border: 1px solid var(--fine-line);
-    border-radius: 0;
-    outline: none;
-    background: rgba(251, 245, 233, 0.75);
-}
 
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 14px;
+
+    font: inherit;
+
+    color: var(--charcoal);
+
+    border: 1px solid var(--fine-line);
+    background: rgba(255,255,255,.45);
+
+    transition:
+        border-color .3s ease,
+        background .3s ease;
+}
 
 .guest-card select {
-    min-height: 46px;
-    padding: 10px 13px;
+    min-height: 48px;
 }
 
-
 .guest-card textarea {
-    min-height: 110px;
-    padding: 13px;
+    min-height: 120px;
     resize: vertical;
 }
 
-
 .guest-card select:focus,
 .guest-card textarea:focus {
+
+    outline: none;
+
     border-color: var(--antique-gold);
-    box-shadow: 0 0 0 3px rgba(167, 134, 79, 0.1);
+
+    background: rgba(255,255,255,.8);
+
 }
 
 
