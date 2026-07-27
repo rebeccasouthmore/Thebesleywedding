@@ -78,93 +78,86 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 const guestName = document.querySelector("#guestName");
-const savedGuest = localStorage.getItem("currentGuest");
-
-if (!savedGuest && (guestName || guestList)) {
-    window.location.href = "index.html";
-}
-
-if (guestName) {
-
-    
-
-    if (savedGuest) {
-
-        const guest = JSON.parse(savedGuest);
-
-guestName.textContent = guest.guests
-    .map(person => person.name)
-    .join(" & ");
-    }
-
-}
-
-
 const guestList = document.querySelector("#guestList");
+const rsvpGuests = document.querySelector("#rsvpGuests");
 const savedGuest = localStorage.getItem("currentGuest");
 
-if (!savedGuest && (guestName || guestList)) {
+// Protect invitation and RSVP pages
+if (!savedGuest && (guestName || guestList || rsvpGuests)) {
     window.location.href = "index.html";
 }
 
-if (guestList) {
+const guest = savedGuest ? JSON.parse(savedGuest) : null;
 
-   
+// Invitation page guest name
+if (guestName && guest) {
 
-    if (savedGuest) {
+    guestName.textContent = guest.guests
+        .map(person => person.name)
+        .join(" & ");
 
-        const guest = JSON.parse(savedGuest);
+}
 
-        guest.guests.forEach(person => {
+// RSVP page guest names
+if (rsvpGuests && guest) {
 
-            const guestCard = document.createElement("div");
+    rsvpGuests.textContent = guest.guests
+        .map(person => person.name)
+        .join(" & ");
 
-            guestCard.className = "guest-card";
+}
 
-            guestCard.innerHTML = `
+// Build RSVP cards
+if (guestList && guest) {
 
-                <h2>${person.name}</h2>
+    guest.guests.forEach(person => {
 
-                <label>
-                   <input type="radio"
-       name="${person.name}-attendance"
-       value="yes">
-                    Delighted to attend
-                </label>
+        const guestCard = document.createElement("div");
 
-                <label>
-                    <input type="radio"
-       name="${person.name}-attendance"
-       value="no">
-                    Unable to attend
-                </label>
+        guestCard.className = "guest-card";
 
-                <br><br>
+        guestCard.innerHTML = `
 
-                <label>
-                    Meal choice:
-                </label>
+            <h2>${person.name}</h2>
 
-                <select>
-                    <option>Meat</option>
-                    <option>Vegan</option>
-                </select>
+            <label>
+                <input type="radio"
+                       name="${person.name}-attendance"
+                       value="yes">
+                Delighted to attend
+            </label>
 
-                <br><br>
+            <label>
+                <input type="radio"
+                       name="${person.name}-attendance"
+                       value="no">
+                Unable to attend
+            </label>
 
-                <label>
-                    Dietary requirements:
-                </label>
+            <br><br>
 
-                <textarea></textarea>
+            <label>
+                Meal choice:
+            </label>
 
-            `;
+            <select>
+                <option>Meat</option>
+                <option>Vegan</option>
+            </select>
 
-            guestList.appendChild(guestCard);
+            <br><br>
 
-        });
+            <label>
+                Dietary requirements:
+            </label>
 
-    }
+            <textarea></textarea>
+
+        `;
+
+        guestList.appendChild(guestCard);
+
+    });
 
 }
 
