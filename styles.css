@@ -226,23 +226,14 @@ h2 {
     margin: 0 auto 35px;
 }
 
-.monogram::before {
-    content: "";
-    position: absolute;
-    inset: 5px;
-    border: 1px solid rgba(167, 134, 79, 0.45);
-    border-radius: 50% / 42%;
-}
+
 
 .monogram span {
     position: relative;
     z-index: 1;
 }
 
-.monogram-ampersand {
-    margin: 0 2px;
-    font-size: 0.65em;
-}
+
 
 .invitation-intro {
     margin: 0 0 22px;
