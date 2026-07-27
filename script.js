@@ -118,42 +118,45 @@ if (guestList && guest) {
 
         guestCard.innerHTML = `
 
-            <h2>${person.name}</h2>
+    <h2>${person.name}</h2>
 
-            <label>
-                <input type="radio"
-                       name="${person.name}-attendance"
-                       value="yes">
-                Delighted to attend
-            </label>
+    <div class="attendance-options">
 
-            <label>
-                <input type="radio"
-                       name="${person.name}-attendance"
-                       value="no">
-                Unable to attend
-            </label>
+        <label class="attendance-card">
+            <input
+                type="radio"
+                name="${person.name}-attendance"
+                value="yes">
+            <span>Accepts with pleasure</span>
+        </label>
 
-            <br><br>
+        <label class="attendance-card">
+            <input
+                type="radio"
+                name="${person.name}-attendance"
+                value="no">
+            <span>Regretfully declines</span>
+        </label>
 
-            <label>
-                Meal choice:
-            </label>
+    </div>
 
-            <select>
-                <option>Meat</option>
-                <option>Vegan</option>
-            </select>
+    <label class="field-label">
+        Meal Selection
+    </label>
 
-            <br><br>
+    <select>
+        <option selected disabled>Please choose…</option>
+        <option>Meat</option>
+        <option>Vegan</option>
+    </select>
 
-            <label>
-                Dietary requirements:
-            </label>
+    <label class="field-label">
+        Dietary Requirements
+    </label>
 
-            <textarea></textarea>
+    <textarea placeholder="Please let us know of any allergies or dietary requirements."></textarea>
 
-        `;
+`;
 
         guestList.appendChild(guestCard);
 
