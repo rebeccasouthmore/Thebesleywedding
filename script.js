@@ -87,7 +87,9 @@ if (guestName) {
 
         const guest = JSON.parse(savedGuest);
 
-guestName.textContent = guest.guests[0].name;
+guestName.textContent = guest.guests
+    .map(person => person.name)
+    .join(" & ");
     }
 
 }
@@ -114,12 +116,16 @@ if (guestList) {
                 <h2>${person.name}</h2>
 
                 <label>
-                    <input type="radio" name="${person.name}-attendance">
+                   <input type="radio"
+       name="${person.name}-attendance"
+       value="yes">
                     Delighted to attend
                 </label>
 
                 <label>
-                    <input type="radio" name="${person.name}-attendance">
+                    <input type="radio"
+       name="${person.name}-attendance"
+       value="no">
                     Unable to attend
                 </label>
 
