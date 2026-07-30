@@ -177,41 +177,125 @@ if (guestList && guest) {
 
     </div>
 
-    <div class="classic-menu" style="display:none;">
+ <div class="classic-menu" style="display:none;">
 
-        <h4>Classic Wedding Menu</h4>
+    <h4>CLASSIC WEDDING MENU</h4>
 
-        <p><strong>Starter</strong></p>
+    <p class="menu-description">
+        A beautifully prepared three-course wedding breakfast, with your choice of starter, main course and dessert.
+    </p>
 
-        <label><input type="radio" name="${person.name}-starter" value="Soup"> Homemade Leek & Potato Soup</label><br>
-        <label><input type="radio" name="${person.name}-starter" value="Chicken"> Crisp Buttermilk Chicken</label>
+    <h5>STARTER</h5>
 
-        <p><strong>Main</strong></p>
+    <label class="menu-card">
+        <input type="radio" name="${person.name}-starter" value="Homemade Leek & Potato Soup">
 
-        <label><input type="radio" name="${person.name}-main" value="Chicken Supreme"> Roast Chicken Supreme</label><br>
-        <label><input type="radio" name="${person.name}-main" value="Roast Beef"> Slow-Cooked Aged Roast Beef</label>
+        <div>
+            <strong>Homemade Leek & Potato Soup</strong>
+            <p>Served with Sourdough Bread and Nevern End Butter.</p>
+        </div>
+    </label>
 
-        <p><strong>Dessert</strong></p>
+    <label class="menu-card">
+        <input type="radio" name="${person.name}-starter" value="Crisp Buttermilk Chicken">
 
-        <label><input type="radio" name="${person.name}-dessert" value="Chocolate Orange Torte"> Rich Chocolate Orange Torte</label><br>
-        <label><input type="radio" name="${person.name}-dessert" value="Glazed Lemon Tart"> Glazed Lemon Tart</label>
+        <div>
+            <strong>Crisp Buttermilk Chicken</strong>
+            <p>Served with Sticky Rice and Katsu Curry.</p>
+        </div>
+    </label>
 
-    </div>
+    <h5>MAIN COURSE</h5>
 
-    <div class="plant-menu" style="display:none;">
+    <label class="menu-card">
+        <input type="radio" name="${person.name}-main" value="Roast Chicken Supreme">
 
-        <h4>Chef's Plant-Based Menu</h4>
+        <div>
+            <strong>Roast Chicken Supreme</strong>
+            <p>Served with Wilted Spinach, Potato Fondant, Balsamic Shallots, and a Wild Mushroom & Pancetta Sauce.</p>
+        </div>
+    </label>
 
-        <p><strong>Starter</strong></p>
-        <p>Heritage Tomatoes with Italian Seasoning on Sourdough Bruschetta</p>
+    <label class="menu-card">
+        <input type="radio" name="${person.name}-main" value="Slow-Cooked Aged Roast Beef">
 
-        <p><strong>Main</strong></p>
-        <p>Sweet Potato, Provençal Vegetables & Vegan Halloumi Layer</p>
+        <div>
+            <strong>Slow-Cooked Aged Roast Beef</strong>
+            <p>Served with Yorkshire Pudding, Roasted Root Vegetables, and Rich Beef Gravy.</p>
+        </div>
+    </label>
 
-        <p><strong>Dessert</strong></p>
-        <p>Vegan Chocolate Brownie</p>
+    <h5>DESSERT</h5>
 
-    </div>
+    <label class="menu-card">
+        <input type="radio" name="${person.name}-dessert" value="Rich Chocolate Orange Torte">
+
+        <div>
+            <strong>Rich Chocolate Orange Torte</strong>
+            <p>Served with Vanilla Ice Cream.</p>
+        </div>
+    </label>
+
+    <label class="menu-card">
+        <input type="radio" name="${person.name}-dessert" value="Glazed Lemon Tart">
+
+        <div>
+            <strong>Glazed Lemon Tart</strong>
+            <p>Served with Raspberry Sorbet.</p>
+        </div>
+    </label>
+
+</div>
+
+   <div class="plant-menu" style="display:none;">
+
+    <h4>CHEF'S PLANT-BASED MENU</h4>
+
+    <p class="menu-description">
+        A specially prepared three-course plant-based dining experience, thoughtfully created by our chefs.
+    </p>
+
+    <h5>STARTER</h5>
+
+    <label class="menu-card">
+        <input
+            type="radio"
+            name="${person.name}-plant-starter"
+            value="Heritage Tomatoes with Italian Seasoning">
+
+        <div>
+            <strong>Heritage Tomatoes with Italian Seasoning</strong>
+            <p>Served on Sourdough Bruschetta.</p>
+        </div>
+    </label>
+
+    <h5>MAIN COURSE</h5>
+
+    <label class="menu-card">
+        <input
+            type="radio"
+            name="${person.name}-plant-main"
+            value="Sweet Potato, Provençal Vegetables & Vegan Halloumi Layer">
+
+        <div>
+            <strong>Sweet Potato, Provençal Vegetables & Vegan Halloumi Layer</strong>
+            <p>Served with a Rich Garlic-Infused Tomato Sauce.</p>
+        </div>
+    </label>
+
+    <h5>DESSERT</h5>
+
+    <label class="menu-card">
+        <input
+            type="radio"
+            name="${person.name}-plant-dessert"
+            value="Vegan Chocolate Brownie">
+
+        <div>
+            <strong>Vegan Chocolate Brownie</strong>
+            <p>Served with Vegan Vanilla Ice Cream.</p>
+        </div>
+    </label>
 
 </div>
 

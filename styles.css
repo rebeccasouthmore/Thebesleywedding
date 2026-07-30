@@ -740,3 +740,108 @@ button:focus-visible {
     margin-bottom: 0;
 
 }
+
+/* ===========================
+   WEDDING MENUS
+=========================== */
+
+.menu-description {
+    max-width: 680px;
+    margin: 0 auto 35px;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.8;
+    color: #7b6d5b;
+}
+
+.classic-menu,
+.plant-menu {
+    margin-top: 35px;
+}
+
+.classic-menu h4,
+.plant-menu h4 {
+    text-align: center;
+    font-size: 1.35rem;
+    letter-spacing: .25em;
+    color: #8c7752;
+    margin-bottom: 15px;
+}
+
+.classic-menu h5,
+.plant-menu h5 {
+    margin: 40px 0 18px;
+    text-align: center;
+    font-size: .85rem;
+    letter-spacing: .25em;
+    color: #a58b63;
+    position: relative;
+}
+
+.classic-menu h5::before,
+.plant-menu h5::before,
+.classic-menu h5::after,
+.plant-menu h5::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: #d8cdb8;
+}
+
+.classic-menu h5::before,
+.plant-menu h5::before {
+    left: 0;
+}
+
+.classic-menu h5::after,
+.plant-menu h5::after {
+    right: 0;
+}
+
+.menu-card {
+    display: block;
+    margin: 18px 0;
+    padding: 24px 28px;
+    background: #fffdf9;
+    border: 1px solid #d8cdb8;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+.menu-card:hover {
+    border-color: #b08d57;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+.menu-card input {
+    display: none;
+}
+
+.menu-card strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.08rem;
+    font-weight: normal;
+    color: #4a4036;
+}
+
+.menu-card p {
+    margin: 0;
+    line-height: 1.7;
+    color: #6d6358;
+    font-size: .95rem;
+}
+
+.menu-card:has(input:checked) {
+    border: 2px solid #b08d57;
+    background: #fbf7ef;
+    box-shadow: 0 10px 30px rgba(176,141,87,.18);
+}
+
+.menu-card:has(input:checked) strong {
+    color: #8c7752;
+}
