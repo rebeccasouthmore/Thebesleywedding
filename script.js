@@ -116,48 +116,97 @@ if (guestList && guest) {
 
         guestCard.className = "guest-card";
 
-        guestCard.innerHTML = `
+   guestCard.innerHTML = `
 
-    <h2>${person.name}</h2>
+<h2>${person.name}</h2>
+
+<div class="attendance-options">
+
+    <label class="attendance-card">
+        <input
+            type="radio"
+            name="${person.name}-attendance"
+            value="yes">
+        <span>Accepts with pleasure</span>
+    </label>
+
+    <label class="attendance-card">
+        <input
+            type="radio"
+            name="${person.name}-attendance"
+            value="no">
+        <span>Regretfully declines</span>
+    </label>
+
+</div>
+
+<div class="wedding-breakfast" style="display:none;">
+
+    <h3>Wedding Breakfast</h3>
+
+    <p class="menu-intro">
+        One of the greatest pleasures of bringing everyone together is sharing a wonderful meal.
+        Please select the menu that is most appropriate for you.
+    </p>
 
     <div class="attendance-options">
 
         <label class="attendance-card">
             <input
                 type="radio"
-                name="${person.name}-attendance"
-                value="yes">
-            <span>Accepts with pleasure</span>
+                name="${person.name}-menu"
+                value="classic">
+            <span>
+                <strong>Classic Wedding Menu</strong><br>
+                Three-course wedding breakfast with your choice of courses.
+            </span>
         </label>
 
         <label class="attendance-card">
             <input
                 type="radio"
-                name="${person.name}-attendance"
-                value="no">
-            <span>Regretfully declines</span>
+                name="${person.name}-menu"
+                value="plant">
+            <span>
+                <strong>Chef's Plant-Based Menu</strong><br>
+                A specially prepared three-course plant-based dining experience.
+            </span>
         </label>
 
     </div>
 
-    <label class="field-label">
-        Meal Selection
-    </label>
+</div>
 
-    <select>
-        <option selected disabled>Please choose…</option>
-        <option>Meat</option>
-        <option>Vegan</option>
-    </select>
+<label class="field-label">
+    Allergies or Additional Dietary Requirements
+</label>
 
-    <label class="field-label">
-        Dietary Requirements
-    </label>
-
-    <textarea placeholder="Please let us know of any allergies or dietary requirements."></textarea>
+<textarea placeholder="Please let us know of any allergies or dietary requirements."></textarea>
 
 `;
+const attendanceRadios = guestCard.querySelectorAll(
+    `input[name="${person.name}-attendance"]`
+);
 
+const breakfastSection = guestCard.querySelector(".wedding-breakfast");
+
+attendanceRadios.forEach(radio => {
+
+    radio.addEventListener("change", () => {
+
+        if (radio.value === "yes") {
+
+            breakfastSection.style.display = "block";
+
+        } else {
+
+            breakfastSection.style.display = "none";
+
+        }
+
+    });
+
+});
         guestList.appendChild(guestCard);
 
     });
