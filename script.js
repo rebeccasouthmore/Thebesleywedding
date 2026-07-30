@@ -177,11 +177,15 @@ if (guestList && guest) {
 
 </div>
 
-<label class="field-label">
-    Allergies or Additional Dietary Requirements
-</label>
+<div class="dietary-section">
 
-<textarea placeholder="Please let us know of any allergies or dietary requirements."></textarea>
+    <label class="field-label">
+        Allergies or Additional Dietary Requirements
+    </label>
+
+    <textarea placeholder="Please let us know of any allergies or dietary requirements."></textarea>
+
+</div>
 
 `;
 const attendanceRadios = guestCard.querySelectorAll(
@@ -189,6 +193,7 @@ const attendanceRadios = guestCard.querySelectorAll(
 );
 
 const breakfastSection = guestCard.querySelector(".wedding-breakfast");
+const dietarySection = guestCard.querySelector(".dietary-section");
 
 const declineMessage = document.createElement("div");
 
@@ -213,12 +218,14 @@ attendanceRadios.forEach(radio => {
         if (radio.value === "yes") {
 
             breakfastSection.style.display = "block";
-            declineMessage.style.display = "none";
+dietarySection.style.display = "block";
+declineMessage.style.display = "none";
 
         } else {
 
             breakfastSection.style.display = "none";
-            declineMessage.style.display = "block";
+dietarySection.style.display = "none";
+declineMessage.style.display = "block";
 
         }
 
