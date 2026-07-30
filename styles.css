@@ -680,3 +680,27 @@ button:focus-visible {
     text-transform:uppercase;
 
 }
+
+/* Selected RSVP Cards */
+
+.attendance-card {
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+.attendance-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+.attendance-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.attendance-card:has(input:checked) {
+    background: #f8f2e6;
+    border: 2px solid #b08d57;
+    box-shadow: 0 10px 25px rgba(176,141,87,.25);
+    transform: translateY(-2px);
+}
