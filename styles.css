@@ -704,3 +704,39 @@ button:focus-visible {
     box-shadow: 0 10px 25px rgba(176,141,87,.25);
     transform: translateY(-2px);
 }
+
+/* Decline Message */
+
+.decline-message {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 24px;
+
+    text-align: center;
+
+    background: #faf7f1;
+
+    border: 1px solid #d7c4a3;
+
+    border-radius: 12px;
+
+    font-style: italic;
+
+    color: #4a4036;
+
+}
+
+.decline-message p:first-child {
+
+    margin-top: 0;
+
+}
+
+.decline-message p:last-child {
+
+    margin-bottom: 0;
+
+}

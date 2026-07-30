@@ -190,6 +190,22 @@ const attendanceRadios = guestCard.querySelectorAll(
 
 const breakfastSection = guestCard.querySelector(".wedding-breakfast");
 
+const declineMessage = document.createElement("div");
+
+declineMessage.className = "decline-message";
+
+declineMessage.innerHTML = `
+    <p><strong>We're so sorry you won't be joining us.</strong></p>
+
+    <p>
+        Thank you for letting us know.
+        You'll certainly be missed and we hope
+        to celebrate with you another time.
+    </p>
+`;
+
+guestCard.appendChild(declineMessage);
+
 attendanceRadios.forEach(radio => {
 
     radio.addEventListener("change", () => {
@@ -197,20 +213,15 @@ attendanceRadios.forEach(radio => {
         if (radio.value === "yes") {
 
             breakfastSection.style.display = "block";
+            declineMessage.style.display = "none";
 
         } else {
 
             breakfastSection.style.display = "none";
+            declineMessage.style.display = "block";
 
         }
 
     });
-
-});
-        guestList.appendChild(guestCard);
-
-    });
-
-}
 
 });
