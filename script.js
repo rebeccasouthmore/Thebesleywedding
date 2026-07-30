@@ -225,3 +225,11 @@ attendanceRadios.forEach(radio => {
     });
 
 });
+
+        guestList.appendChild(guestCard);
+
+    });
+
+}
+    
+});
