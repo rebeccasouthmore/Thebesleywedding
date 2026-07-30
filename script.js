@@ -153,27 +153,58 @@ if (guestList && guest) {
 
         <label class="attendance-card">
             <input
-                type="radio"
-                name="${person.name}-menu"
-                value="classic">
-            <span>
-                <strong>Classic Wedding Menu</strong><br>
-                Three-course wedding breakfast with your choice of courses.
-            </span>
-        </label>
+             <div class="attendance-options">
 
-        <label class="attendance-card">
-            <input
-                type="radio"
-                name="${person.name}-menu"
-                value="plant">
-            <span>
-                <strong>Chef's Plant-Based Menu</strong><br>
-                A specially prepared three-course plant-based dining experience.
-            </span>
-        </label>
+    <label class="attendance-card">
+        <input
+            type="radio"
+            name="${person.name}-menu"
+            value="classic">
 
-    </div>
+        <span>
+            <strong>Classic Wedding Menu</strong><br>
+            Three-course wedding breakfast with your choice of courses.
+        </span>
+
+    </label>
+
+    <label class="attendance-card">
+        <input
+            type="radio"
+            name="${person.name}-menu"
+            value="plant">
+
+        <span>
+            <strong>Chef's Plant-Based Menu</strong><br>
+            A specially prepared three-course plant-based dining experience.
+        </span>
+
+    </label>
+
+</div>
+
+<div class="classic-menu" style="display:none;">
+
+    <h4>Classic Wedding Menu</h4>
+
+    <p><strong>Starter</strong></p>
+
+    <ul>
+        <li>Homemade Leek & Potato Soup</li>
+        <li>Crisp Buttermilk Chicken</li>
+    </ul>
+
+</div>
+
+<div class="plant-menu" style="display:none;">
+
+    <h4>Chef's Plant-Based Menu</h4>
+
+    <p><strong>Starter</strong></p>
+
+    <p>Heritage Tomatoes with Italian Seasoning on Sourdough Bruschetta</p>
+
+</div>
 
 </div>
 
