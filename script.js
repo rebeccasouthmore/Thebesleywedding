@@ -153,58 +153,65 @@ if (guestList && guest) {
 
         <label class="attendance-card">
             <input
-             <div class="attendance-options">
+                type="radio"
+                name="${person.name}-menu"
+                value="classic">
 
-    <label class="attendance-card">
-        <input
-            type="radio"
-            name="${person.name}-menu"
-            value="classic">
+            <span>
+                <strong>Classic Wedding Menu</strong><br>
+                Three-course wedding breakfast with your choice of courses.
+            </span>
+        </label>
 
-        <span>
-            <strong>Classic Wedding Menu</strong><br>
-            Three-course wedding breakfast with your choice of courses.
-        </span>
+        <label class="attendance-card">
+            <input
+                type="radio"
+                name="${person.name}-menu"
+                value="plant">
 
-    </label>
+            <span>
+                <strong>Chef's Plant-Based Menu</strong><br>
+                A specially prepared three-course plant-based dining experience.
+            </span>
+        </label>
 
-    <label class="attendance-card">
-        <input
-            type="radio"
-            name="${person.name}-menu"
-            value="plant">
+    </div>
 
-        <span>
-            <strong>Chef's Plant-Based Menu</strong><br>
-            A specially prepared three-course plant-based dining experience.
-        </span>
+    <div class="classic-menu" style="display:none;">
 
-    </label>
+        <h4>Classic Wedding Menu</h4>
 
-</div>
+        <p><strong>Starter</strong></p>
 
-<div class="classic-menu" style="display:none;">
+        <label><input type="radio" name="${person.name}-starter" value="Soup"> Homemade Leek & Potato Soup</label><br>
+        <label><input type="radio" name="${person.name}-starter" value="Chicken"> Crisp Buttermilk Chicken</label>
 
-    <h4>Classic Wedding Menu</h4>
+        <p><strong>Main</strong></p>
 
-    <p><strong>Starter</strong></p>
+        <label><input type="radio" name="${person.name}-main" value="Chicken Supreme"> Roast Chicken Supreme</label><br>
+        <label><input type="radio" name="${person.name}-main" value="Roast Beef"> Slow-Cooked Aged Roast Beef</label>
 
-    <ul>
-        <li>Homemade Leek & Potato Soup</li>
-        <li>Crisp Buttermilk Chicken</li>
-    </ul>
+        <p><strong>Dessert</strong></p>
 
-</div>
+        <label><input type="radio" name="${person.name}-dessert" value="Chocolate Orange Torte"> Rich Chocolate Orange Torte</label><br>
+        <label><input type="radio" name="${person.name}-dessert" value="Glazed Lemon Tart"> Glazed Lemon Tart</label>
 
-<div class="plant-menu" style="display:none;">
+    </div>
 
-    <h4>Chef's Plant-Based Menu</h4>
+    <div class="plant-menu" style="display:none;">
 
-    <p><strong>Starter</strong></p>
+        <h4>Chef's Plant-Based Menu</h4>
 
-    <p>Heritage Tomatoes with Italian Seasoning on Sourdough Bruschetta</p>
+        <p><strong>Starter</strong></p>
+        <p>Heritage Tomatoes with Italian Seasoning on Sourdough Bruschetta</p>
 
-</div>
+        <p><strong>Main</strong></p>
+        <p>Sweet Potato, Provençal Vegetables & Vegan Halloumi Layer</p>
+
+        <p><strong>Dessert</strong></p>
+        <p>Vegan Chocolate Brownie</p>
+
+    </div>
 
 </div>
 
@@ -257,6 +264,33 @@ declineMessage.style.display = "none";
             breakfastSection.style.display = "none";
 dietarySection.style.display = "none";
 declineMessage.style.display = "block";
+
+        }
+
+    });
+
+});
+
+const menuRadios = guestCard.querySelectorAll(
+    `input[name="${person.name}-menu"]`
+);
+
+const classicMenu = guestCard.querySelector(".classic-menu");
+const plantMenu = guestCard.querySelector(".plant-menu");
+
+menuRadios.forEach(radio => {
+
+    radio.addEventListener("change", () => {
+
+        if (radio.value === "classic") {
+
+            classicMenu.style.display = "block";
+            plantMenu.style.display = "none";
+
+        } else {
+
+            classicMenu.style.display = "none";
+            plantMenu.style.display = "block";
 
         }
 
